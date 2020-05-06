@@ -12,7 +12,11 @@ function LandingPage() {
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
-    const [PostSize, setPostSize] = useState(0)
+    const [PostSize, setPostSize] = useState()
+    const [Filters, setFilters] = useState({
+        continents: [],
+        price: []
+    })
 
     useEffect(() => {
 
@@ -26,14 +30,18 @@ function LandingPage() {
 
     const getProducts = (variables) => {
         Axios.post('/api/product/getProducts', variables)
-        .then(response => {
-            if(response.data.success) {
-                setProducts([...Products, ...response.data.products])
-                setPostSize(response.data.postSize)
-            } else {
-                alert('Failed to fetch product data')
-            }
-        })
+            .then(response => {
+                if (response.data.success) {
+                    if (variables.loadMore) {
+                        setProducts([...Products, ...response.data.products])
+                    } else {
+                        setProducts(response.data.products)
+                    }
+                    setPostSize(response.data.postSize)
+                } else {
+                    alert('Failed to fectch product datas')
+                }
+            })
     }
 
     const onLoadMore = () => {
@@ -41,7 +49,8 @@ function LandingPage() {
 
         const variables = {
             skip: skip,
-            limit: Limit
+            limit: Limit,
+            loadMore: true
         }
 
         getProducts(variables)
@@ -65,8 +74,29 @@ function LandingPage() {
         </Col>
     })
 
+    const showFilteredResults = (filters) => {
+        const variables = {
+            skip: 0,
+            limit: Limit,
+            filters: filters
+        }
+
+        getProducts(variables)
+        setSkip(0)
+    }
+
     const handleFilters = (filters, category) => {
         console.log(filters)
+        const newFilters = { ...Filters }
+
+        newFilters[category] = filters
+
+        if(category === "price") {
+
+        }
+
+        showFilteredResults(newFilters)
+        setFilters(newFilters)
     }
 
     return (
