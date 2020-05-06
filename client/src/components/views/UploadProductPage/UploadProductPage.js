@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Typography, Button, Form, Message, Input, Icon } from 'antd'
 import FileUpload from '../../utils/FileUpload'
+import Axios from 'axios';
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -15,12 +16,14 @@ const Continents = [
     { key: 7, value: "Antartica" }
 ]
 
-function UploadProductPage() {
+function UploadProductPage(props) {
 
     const [TitleValue, setTitleValue] = useState("")
     const [DescriptionValue, setDescriptionValue ] = useState("")
     const [PriceValue, setPriceValue] = useState(0)
     const [ContinentValue, setContinentValue] = useState(1)
+
+    const [Images, setImages] = useState([])
 
     const onTitleChange = (event) => {
         setTitleValue(event.currentTarget.value)
@@ -34,6 +37,32 @@ function UploadProductPage() {
     const onContinentsSelectChange = (event) => {
         setContinentValue(event.currentTarget.value)
     }
+    const updateImages = (newImages) => {
+        setImages(newImages)
+    }
+    const onSubmit = (event) => {
+        event.preventDefault();
+
+        const variables = {
+            writer: props.user.userData._id,
+            title: TitleValue,
+            description: DescriptionValue,
+            price: PriceValue,
+            images: Images,
+            Continents: ContinentValue
+        }
+
+        Axios.post('/api/product/uploadProduct', variables)
+        .then(response => {
+            if(response.data.success) {
+                alert('Product successfully uploaded!')
+                props.history.push('/')
+            } else {
+                alert('Failed to upload product')
+            }
+        })
+    }
+
 
     return (
         <div style={{ maxWidth:'700px', margin:'2rem auto' }} >
@@ -41,9 +70,9 @@ function UploadProductPage() {
                 <Title level={2}>Upload Travel Product</Title>
             </div>
 
-            <Form onSubmit >
+            <Form onSubmit={onSubmit} >
                 {/* dropzone */}
-                <FileUpload />
+                <FileUpload  refreshFunction={updateImages} />
 
                 <br />
                 <br />
@@ -75,7 +104,9 @@ function UploadProductPage() {
                 </select>
                 <br />
                 <br />
-                <Button>
+                <Button
+                    onClick={onSubmit}
+                >
                     Submit
                 </Button>
 
