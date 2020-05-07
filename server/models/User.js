@@ -6,12 +6,12 @@ const moment = require("moment");
 
 const userSchema = mongoose.Schema({
     name: {
-        type:String,
-        maxlength:50
+        type: String,
+        maxlength: 50
     },
     email: {
-        type:String,
-        trim:true,
+        type: String,
+        trim: true,
         unique: 1 
     },
     password: {
@@ -19,12 +19,20 @@ const userSchema = mongoose.Schema({
         minglength: 5
     },
     lastname: {
-        type:String,
+        type: String,
         maxlength: 50
     },
     role : {
-        type:Number,
+        type: Number,
         default: 0 
+    },
+    cart : {
+        type: Array,
+        default: []
+    },
+    history: {
+        type: Array,
+        default: []
     },
     image: String,
     token : {
