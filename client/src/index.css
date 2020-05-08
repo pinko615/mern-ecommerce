@@ -1,12 +1,14 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lora', serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 code {
   font-family: 'Playfair Display', serif;
@@ -17,7 +19,6 @@ body {
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
-  background-color: #fff;
 }
 
 .app {
@@ -53,4 +54,13 @@ td,th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.ant-card-meta-title {
+  font-family: 'Lora', serif;
+  font-size: 18px !important;
+}
+
+.ant-checkbox-wrapper {
+  margin: 0px 10px !important;
 }

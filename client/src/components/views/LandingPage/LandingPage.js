@@ -6,6 +6,7 @@ import RadioBox from './Sections/RadioBox'
 import CheckBox from './Sections/CheckBox'
 import { continents, price } from './Sections/Datas'
 import SearchFeature from './Sections/SearchFeature'
+import MainSlide from './Sections/MainSlide'
 const { Meta } = Card
 
 
@@ -136,9 +137,15 @@ function LandingPage() {
     }
 
     return (
-        <div style={{ width:'75%', margin:'3rem auto' }}>
+        <div>
+        <div style={{ width:'100%', margin:'auto' }}>
+            <MainSlide />
+        </div>
+        <div style={{ width:'75%', margin:'auto' }}>
             <div style={{ textAlign:'center' }}>
-                <h2>Let's Travel Anywhere <Icon type="rocket" /></h2>
+                <h2 style={{ fontFamily:'Lora, serif', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
+                    Explore Now, Travel Later
+                </h2>
             </div>
 
             {/* filter */}
@@ -187,6 +194,7 @@ function LandingPage() {
                     </div>
                 }
 
+        </div>
         </div>
     )
 }

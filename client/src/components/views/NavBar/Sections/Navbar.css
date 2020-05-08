@@ -1,23 +1,27 @@
 @import '~antd/dist/antd.css';
 
 .menu {
-  padding: 0 20px;
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
   box-shadow: 0 0 30px #f3f1f1;
   background-color: white;
+  width: 100%;
+}
+
+.menu-w {
+  width: 75%;
 }
 
 .menu__logo {
-  width: 150px;
+  width: 200px;
   float: left;
 }
 
 .menu__logo a {
   display: inline-block;
   font-size: 20px;
-  padding: 19px 20px;
-  color: #6420F7;
+  padding: 20px 0;
+  color: #6420F7 !important;
 }
 
 .menu__container .ant-menu-item {
@@ -35,7 +39,10 @@
 
 .menu__container .ant-menu-horizontal {
   border-bottom: none;
-  color: red;
+}
+
+.ant-menu-horizontal > .ant-menu-item > a:hover {
+  color: #6420F7;
 }
 
 .menu__container .menu_left {
@@ -44,7 +51,6 @@
 
 .menu__container .menu_rigth {
   float: right;
-  color: red;
 }
 
 .menu__mobile-button {

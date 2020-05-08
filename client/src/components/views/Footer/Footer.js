@@ -8,7 +8,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> Happy Coding  <Icon type="smile" /></p>
+           <div className="footer-copyright">Made by <a href="https://github.com/pinko615">Pinko</a>. All right reserved</div>
         </div>
     )
 }

@@ -16,9 +16,10 @@ function NavBar() {
   };
 
   return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <nav className="menu" style={{ margin:'auto', padding:'auto' }}>
+      <div className="menu-w" style={{ margin:'auto', padding:'auto' }}>
       <div className="menu__logo">
-        <a href="/">Logo</a>
+        <a href="/" style={{ fontFamily:'Lora' }}>Freedom</a>
       </div>
       <div className="menu__container">
         <div className="menu_left">
@@ -45,6 +46,7 @@ function NavBar() {
           <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
         </Drawer>
+      </div>
       </div>
     </nav>
   )
