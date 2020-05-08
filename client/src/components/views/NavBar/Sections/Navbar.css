@@ -17,6 +17,7 @@
   display: inline-block;
   font-size: 20px;
   padding: 19px 20px;
+  color: #6420F7;
 }
 
 .menu__container .ant-menu-item {
@@ -34,6 +35,7 @@
 
 .menu__container .ant-menu-horizontal {
   border-bottom: none;
+  color: red;
 }
 
 .menu__container .menu_left {
@@ -42,6 +44,7 @@
 
 .menu__container .menu_rigth {
   float: right;
+  color: red;
 }
 
 .menu__mobile-button {
