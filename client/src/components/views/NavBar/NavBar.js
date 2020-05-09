@@ -19,12 +19,9 @@ function NavBar() {
     <nav className="menu" style={{ margin:'auto', padding:'auto' }}>
       <div className="menu-w" style={{ margin:'auto', padding:'auto' }}>
       <div className="menu__logo">
-        <a href="/" style={{ fontFamily:'Lora' }}>Freedom</a>
+          <a href="/"><h1 style={{ fontWeight:'600' }}>Discover.</h1></a>
       </div>
       <div className="menu__container">
-        <div className="menu_left">
-          <LeftMenu mode="horizontal" />
-        </div>
         <div className="menu_rigth">
           <RightMenu mode="horizontal" />
         </div>

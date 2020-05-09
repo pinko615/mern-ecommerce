@@ -1,21 +1,22 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Lora', serif !important;
+  font-family: 'Catamaran', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 
 code {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Catamaran', serif;
 }
 
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Catamaran', serif;
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
@@ -63,4 +64,13 @@ tr:nth-child(even) {
 
 .ant-checkbox-wrapper {
   margin: 0px 10px !important;
+}
+
+.background {
+  background-image: url(./components/views/LandingPage/Sections/header2.jpg);
+  width: 100%;
+  min-height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

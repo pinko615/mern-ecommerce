@@ -14,7 +14,7 @@ function LandingPage() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(8)
+    const [Limit, setLimit] = useState(6)
     const [PostSize, setPostSize] = useState()
     const [SearchTerms, setSearchTerms] = useState("")
 
@@ -66,10 +66,11 @@ function LandingPage() {
 
     const renderCards = Products.map((product, index) => {
 
-        return <Col lg={6} md={8} xs={24}>
-            <Card
+        return <Col lg={4} md={8} xs={12}>
+            <Card style={{ borderRadius:'8px' }}
                 hoverable={true}
-                cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
+                cover={<a href={`/product/${product._id}`} >
+                    <ImageSlider images={product.images} /></a>}
             >
                 <Meta
                     title={product.title}
@@ -138,13 +139,13 @@ function LandingPage() {
 
     return (
         <div>
-        <div style={{ width:'100%', margin:'auto' }}>
+        <div style={{ width:'85%', margin:'auto' }}>
             <MainSlide />
         </div>
-        <div style={{ width:'75%', margin:'auto' }}>
+        <div style={{ width:'85%', margin:'auto' }}>
             <div style={{ textAlign:'center' }}>
-                <h2 style={{ fontFamily:'Lora, serif', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
-                    Explore Now, Travel Later
+                <h2 style={{ fontFamily:'Catamaran', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
+                    Discover Now, Travel Tomorrow
                 </h2>
             </div>
 
@@ -190,7 +191,7 @@ function LandingPage() {
 
                 {PostSize >= Limit &&
                     <div style={{ display:'flex', justifyContent:'center' }}>
-                        <Button onClick={onLoadMore}>Load more</Button>
+                        <Button onClick={onLoadMore} style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }}>Load more</Button>
                     </div>
                 }
 

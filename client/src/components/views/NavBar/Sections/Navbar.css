@@ -1,15 +1,19 @@
 @import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&display=swap');
 
 .menu {
-  border-bottom: solid 1px #e8e8e8;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
   background-color: white;
   width: 100%;
+  font-family: 'Catamaran', sans-serif !important;
 }
 
 .menu-w {
-  width: 75%;
+  width: 85%;
+}
+
+h1 {
+  margin: 0;
 }
 
 .menu__logo {
@@ -20,16 +24,21 @@
 .menu__logo a {
   display: inline-block;
   font-size: 20px;
+  font-weight: 600;
   padding: 20px 0;
-  color: #6420F7 !important;
 }
 
 .menu__container .ant-menu-item {
+  display: inline-block;
   padding: 0px 5px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .menu__container .ant-menu-submenu-title {
   padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .menu__container .ant-menu-item a,
@@ -51,6 +60,7 @@
 
 .menu__container .menu_rigth {
   float: right;
+  margin-top: 12px;
 }
 
 .menu__mobile-button {
