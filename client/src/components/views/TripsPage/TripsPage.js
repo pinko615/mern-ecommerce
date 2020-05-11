@@ -10,7 +10,7 @@ import MainSlide from './Sections/MainSlide'
 const { Meta } = Card
 
 
-function LandingPage() {
+function TripsPage() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
@@ -66,15 +66,15 @@ function LandingPage() {
 
     const renderCards = Products.map((product, index) => {
 
-        return <Col lg={6} md={8} xs={12}>
+        return <Col lg={4} md={8} xs={12}>
             <Card
                 hoverable={true}
                 cover={<a href={`/product/${product._id}`} >
-                    <ImageSlider images={product.images2} /></a>}
+                    <ImageSlider images={product.images} /></a>}
             >
                 <Meta
                     title={product.title}
-                    description={product.country}
+                    description={`$${product.price}`}
                 />
             </Card>
         </Col>
@@ -140,13 +140,37 @@ function LandingPage() {
     return (
         <div>
         <div style={{ width:'85%', margin:'auto' }}>
-            <MainSlide />
-        </div>
-        <div style={{ width:'85%', margin:'auto' }}>
             <div style={{ textAlign:'center' }}>
                 <h2 style={{ fontFamily:'Catamaran', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
                     Discover Now, Travel Tomorrow
                 </h2>
+            </div>
+
+            {/* filter */}
+            <Row gutter={[16, 16]}>
+                <Col lg={12} xs={24}>
+                    <CheckBox
+                        list={continents}
+                        handleFilters={filters => handleFilters(filters, "continents")}
+                    />
+                </Col>
+                <Col lg={12} xs={24}>
+                    <RadioBox
+                        list={price}
+                        handleFilters={filters => handleFilters(filters, "price")}
+                    />
+                </Col>
+            </Row>
+
+
+
+            {/* search */}
+            <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
+                
+                <SearchFeature
+                    refreshFunction={updateSearchTerms}
+                />
+
             </div>
 
             {Products.length === 0 ?
@@ -162,15 +186,15 @@ function LandingPage() {
             }
                 <br /><br />
 
-                {/* {PostSize >= Limit &&
+                {PostSize >= Limit &&
                     <div style={{ display:'flex', justifyContent:'center' }}>
                         <Button onClick={onLoadMore} style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }}>Load more</Button>
                     </div>
-                } */}
+                }
 
         </div>
         </div>
     )
 }
 
-export default LandingPage
+export default TripsPage

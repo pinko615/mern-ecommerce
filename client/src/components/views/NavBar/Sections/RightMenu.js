@@ -24,11 +24,20 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key="mail">
-          <a href="/login">Signin</a>
+        <Menu.Item key="home">
+          <a href="/">Home</a>
         </Menu.Item>
-        <Menu.Item key="app">
-          <a href="/register">Signup</a>
+        <Menu.Item key="trips">
+          <a href="/trips">Trips</a>
+        </Menu.Item>
+        <Menu.Item key="about">
+          <a href="/">About</a>
+        </Menu.Item>
+        <Menu.Item key="contact">
+          <a href="/">Contact</a>
+        </Menu.Item>
+        <Menu.Item key="mail">
+          <a href="/login">Login</a>
         </Menu.Item>
       </Menu>
     )
@@ -39,7 +48,7 @@ function RightMenu(props) {
           <a href="/">Home</a>
         </Menu.Item>
         <Menu.Item key="trips">
-          <a href="/">Trips</a>
+          <a href="/trips">Trips</a>
         </Menu.Item>
         <Menu.Item key="about">
           <a href="/">About</a>

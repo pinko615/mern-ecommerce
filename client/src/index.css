@@ -1,6 +1,5 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&display=swap');
 
 body {
@@ -58,8 +57,15 @@ tr:nth-child(even) {
 }
 
 .ant-card-meta-title {
-  font-family: 'Lora', serif;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600 !important;
   font-size: 18px !important;
+}
+
+.ant-card-meta-description {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #6420f7 !important;
 }
 
 .ant-checkbox-wrapper {
@@ -73,4 +79,21 @@ tr:nth-child(even) {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.ant-carousel .slick-slide img {
+  transition: all 0.2s ease-in  ;
+}
+
+.image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
+  display: none;
+}
+
+.image-gallery-fullscreen-button .image-gallery-svg, .image-gallery-play-button .image-gallery-svg {
+  display: none;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #6420F7 !important;
+  border-bottom: none !important;
 }

@@ -27,15 +27,15 @@ function DetailProductPage(props) {
     }
 
     return (
-        <div className="postPage" style={{ width:'100%', padding:'3rem 4rem' }}>
-            <div style={{ display:'flex', justifyContent:'center' }}>
-                <h1>{Product.title}</h1>
+        <div className="postPage" style={{ width:'85%', margin:'auto' }}>
+            <div style={{ display:'flex', justifyContent:'left' }}>
+
             </div>
             
             <br />
 
-            <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
+            <Row gutter={40, 40}>
+                <Col style={{margin:'auto'}} lg={12} xs={24}>
                     <ProductImage detail={Product} />
                 </Col>
                 <Col lg={12} xs={24}>

@@ -10,6 +10,10 @@ const productSchema = mongoose.Schema({
         type: String,
         maxlength: 50
     },
+    country: {
+        type: String,
+        maxlength: 50
+    },
     description: {
         type: String
     },
@@ -21,9 +25,16 @@ const productSchema = mongoose.Schema({
         type: Array,
         default: []
     },
+    images2: {
+        type: Array,
+        default: []
+    },
     continents: {
         type: Number,
         default: 1
+    },
+    todo: {
+        type: String
     },
     sold: {
         type: Number,

@@ -19,7 +19,9 @@ const Continents = [
 function UploadProductPage(props) {
 
     const [TitleValue, setTitleValue] = useState("")
+    const [CountryValue, setCountryValue] = useState("")
     const [DescriptionValue, setDescriptionValue] = useState("")
+    const [TodoValue, setTodoValue] = useState("")
     const [PriceValue, setPriceValue] = useState(0)
     const [ContinentValue, setContinentValue] = useState(1)
 
@@ -30,8 +32,16 @@ function UploadProductPage(props) {
         setTitleValue(event.currentTarget.value)
     }
 
+    const onCountryChange = (event) => {
+        setCountryValue(event.currentTarget.value)
+    }
+
     const onDescriptionChange = (event) => {
         setDescriptionValue(event.currentTarget.value)
+    }
+
+    const onTodoChange = (event) => {
+        setTodoValue(event.currentTarget.value)
     }
 
     const onPriceChange = (event) => {
@@ -49,15 +59,16 @@ function UploadProductPage(props) {
         event.preventDefault();
 
 
-        if (!TitleValue || !DescriptionValue || !PriceValue ||
-            !ContinentValue || !Images) {
+        if (!TitleValue || !CountryValue || !DescriptionValue || !TodoValue || !PriceValue || !ContinentValue || !Images) {
             return alert('fill all the fields first!')
         }
 
         const variables = {
             writer: props.user.userData._id,
             title: TitleValue,
+            country: CountryValue,
             description: DescriptionValue,
+            todo: TodoValue,
             price: PriceValue,
             images: Images,
             continents: ContinentValue,
@@ -84,11 +95,6 @@ function UploadProductPage(props) {
 
             <Form onSubmit={onSubmit} >
 
-                {/* DropZone */}
-                <FileUpload refreshFunction={updateImages} />
-
-                <br />
-                <br />
                 <label>Title</label>
                 <Input
                     onChange={onTitleChange}
@@ -96,10 +102,24 @@ function UploadProductPage(props) {
                 />
                 <br />
                 <br />
+                <label>Country</label>
+                <Input
+                    onChange={onCountryChange}
+                    value={CountryValue}
+                />
+                <br />
+                <br />
                 <label>Description</label>
                 <TextArea
                     onChange={onDescriptionChange}
                     value={DescriptionValue}
+                />
+                <br />
+                <br />
+                <label>What to do?</label>
+                <TextArea
+                    onChange={onTodoChange}
+                    value={TodoValue}
                 />
                 <br />
                 <br />
@@ -117,11 +137,17 @@ function UploadProductPage(props) {
                 </select>
                 <br />
                 <br />
+                {/* DropZone */}
+                <p>Upload images</p>
+                <FileUpload refreshFunction={updateImages} />
 
-                <Button
+                <br />
+                <br />
+
+                <Button size="large" style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }} shape="round"
                     onClick={onSubmit}
                 >
-                    Submit
+                    Upload
                 </Button>
 
             </Form>
