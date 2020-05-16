@@ -1,25 +1,76 @@
 import React from 'react'
 import { Row, Col, Divider } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Footer() {
     return (
-        <div style={{
-            marginTop: '30px',
-            height: '80px', display: 'flex',
-            flexDirection: 'column', alignItems: 'center',
-            justifyContent: 'center', fontSize:'1rem'
-        }}>
-            <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}>
-    </Divider>
-    <Row justify="center">
-      <Col span={4}><FontAwesomeIcon icon="check-square" /></Col>
-      <Col span={4}><FontAwesomeIcon icon={['fab', 'google']} /></Col>
-      <Col span={4}><FontAwesomeIcon icon={['fab', 'google']} /></Col>
-      <Col span={4}><FontAwesomeIcon icon={['fab', 'google']} /></Col>
-    </Row>
-           <div className="footer-copyright">Made by <a href="https://github.com/pinko615">Pinko</a>. All right reserved</div>
+        <footer>
+        <div className="container">
+            <Divider orientation="left" className="divider" />
+            <Row>
+            <Col span={12}>
+                <div>
+                    <p className="d-logo">D.</p>
+                    <p className="company-address">684 Sumner Street, 90220</p>
+                    <p className="company-address">California, United States</p>
+                </div>
+            </Col>
+            <Col span={4}>
+                <div>
+                    <p className="section-title">Sections</p>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                </div>
+            </Col>
+            <Col span={4}>
+                <div>
+                    <p className="section-title">Sections</p>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                </div>
+            </Col>
+            <Col span={4}>
+                <div>
+                    <p className="section-title">Sections</p>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                </div>
+            </Col>
+            </Row>
+            <div className="copyright">
+                <div>Made by<a href="https://github.com/pinko615"> Pinko</a>. All right reserved</div>
+            </div>
         </div>
+        </footer>
     )
 }
 

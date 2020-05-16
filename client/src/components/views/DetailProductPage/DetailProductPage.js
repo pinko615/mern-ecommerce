@@ -27,23 +27,41 @@ function DetailProductPage(props) {
     }
 
     return (
-        <div className="postPage" style={{ width:'85%', margin:'auto' }}>
-            <div style={{ display:'flex', justifyContent:'left' }}>
+        // <div className="postPage" style={{ width:'85%', margin:'auto' }}>
+        //     <div style={{ display:'flex', justifyContent:'left' }}>
 
-            </div>
+        //     </div>
             
-            <br />
+        //     <br />
 
-            <Row gutter={40, 40}>
-                <Col style={{margin:'auto'}} lg={12} xs={24}>
-                    <ProductImage detail={Product} />
-                </Col>
-                <Col lg={12} xs={24}>
-                    <ProductInfo
-                    addToCart={addToCartHandler}
-                    detail={Product} />
-                </Col>
-            </Row>  
+        //     <Row gutter={40, 40}>
+        //         <Col style={{margin:'auto'}} lg={12} xs={24}>
+        //             <ProductImage detail={Product} />
+        //         </Col>
+        //         <Col lg={12} xs={24}>
+        //             <ProductInfo
+        //             addToCart={addToCartHandler}
+        //             detail={Product} />
+        //         </Col>
+        //     </Row>  
+        // </div>
+
+        <div className="postPage container">
+            <div>
+                <h1 className="mt-20">
+                    Travel to {Product.title}
+                </h1>
+            </div>
+            <div>
+                <p className="country">
+                    {Product.country}
+                </p>
+            </div>
+            <ProductImage detail={Product} />
+            <ProductInfo
+                addToCart={addToCartHandler}
+                detail={Product}
+            />  
         </div>
     )
 }

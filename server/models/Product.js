@@ -17,7 +17,29 @@ const productSchema = mongoose.Schema({
     description: {
         type: String
     },
+    todo: {
+        type: String
+    },
+    info: {
+        type: String
+    },
     price: {
+        type: Number,
+        default: 0
+    },
+    popularity: {
+        type: Number,
+        default: 0
+    },
+    nightlife: {
+        type: Number,
+        default: 0
+    },
+    attractions: {
+        type: Number,
+        default: 0
+    },
+    gastronomy: {
         type: Number,
         default: 0
     },
@@ -25,16 +47,13 @@ const productSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    images2: {
+    horizontal: {
         type: Array,
         default: []
     },
     continents: {
         type: Number,
         default: 1
-    },
-    todo: {
-        type: String
     },
     sold: {
         type: Number,

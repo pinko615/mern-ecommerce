@@ -7,6 +7,7 @@ import CheckBox from './Sections/CheckBox'
 import { continents, price } from './Sections/Datas'
 import SearchFeature from './Sections/SearchFeature'
 import MainSlide from './Sections/MainSlide'
+import Why from './Sections/Why'
 const { Meta } = Card
 
 
@@ -70,7 +71,7 @@ function LandingPage() {
             <Card
                 hoverable={true}
                 cover={<a href={`/product/${product._id}`} >
-                    <ImageSlider images={product.images2} /></a>}
+                    <ImageSlider images={product.images} /></a>}
             >
                 <Meta
                     title={product.title}
@@ -139,36 +140,21 @@ function LandingPage() {
 
     return (
         <div>
-        <div style={{ width:'85%', margin:'auto' }}>
-            <MainSlide />
-        </div>
-        <div style={{ width:'85%', margin:'auto' }}>
-            <div style={{ textAlign:'center' }}>
-                <h2 style={{ fontFamily:'Catamaran', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
+            <div className="container">
+                <MainSlide />
+                <div className="home">
+                    <h2>
                     Discover Now, Travel Tomorrow
-                </h2>
-            </div>
-
-            {Products.length === 0 ?
-                <div style={{ display:'flex', height:'300px', justifyContent:'center', alignItems:'center' }}>
-                    <h2>No post yet...</h2>
-                </div> :
+                    </h2>
+                </div>
                 <div>
                     <Row gutter={[16,16]}>
                         {Products.map((product, index) => {})}
                         {renderCards}
                     </Row>
                 </div>
-            }
-                <br /><br />
-
-                {/* {PostSize >= Limit &&
-                    <div style={{ display:'flex', justifyContent:'center' }}>
-                        <Button onClick={onLoadMore} style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }}>Load more</Button>
-                    </div>
-                } */}
-
-        </div>
+                <Why />
+            </div>
         </div>
     )
 }

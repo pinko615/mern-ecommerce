@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&display=swap');
 
+/* global adjustments */
+
 body {
   margin: 0;
   font-family: 'Catamaran', serif;
@@ -9,6 +11,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection { 
+  background: #6420F7 !important; 
+}
 
 code {
   font-family: 'Catamaran', serif;
@@ -21,6 +26,158 @@ body {
   color: #24292e;
 }
 
+.container {
+  width: 75%;
+  margin: auto;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.d-logo {
+  font-weight: 600;
+  font-size: 60px;
+  color: #6420F7;
+  margin-bottom: 0px;
+}
+
+/* login */
+
+
+/* register */
+
+
+/* upload page */
+
+
+/* main slide */
+
+.background {
+  background-image: url(./components/views/LandingPage/Sections/header2.jpg);
+  width: 100%;
+  min-height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sub-container {
+  width: 90%;
+  margin: auto;
+  color: white;
+  font-weight: 600;
+}
+
+.sub-container h1 {
+  color: white;
+  font-size: 36px;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+.sub-container p {
+  max-width: 50%;
+  font-size: 16px;
+}
+
+.sub-container .button {
+  background-color: #6420F7;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.sub-container .button:hover {
+  color: #6420F7;
+  border: 1px solid #6420F7;
+}
+
+/* home */
+
+.home h2 {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.appdesign {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* trips */
+
+.trips h2 {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+}
+
+.center-button .button {
+  background-color: #6420F7;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.center-button .button:hover {
+  border: 1px solid #6420F7;
+  color: #6420F7;
+  font-weight: 600;
+}
+
+/* detail product page */
+
+.country {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6420F7;
+  margin-top: 10px;
+}
+
+/* product info */
+
+.product-info {
+  font-family: 'Catamaran', sans-serif;
+  margin-top: 40px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-info p {
+  font-size: 16px !important;
+}
+
+.product-info .btn {
+  background-color: #6420F7;
+  color: white;
+  border: none;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.product-info .btn:hover {
+  color: #6420F7;
+  border: 1px solid #6420F7;
+}
+
+/* login */
 .app {
   flex-direction: column;
   display: flex;
@@ -29,10 +186,99 @@ body {
   height: 100vh;
 }
 
+/* footer */
+
+footer .container {
+  width: 75%;
+  margin: auto;
+  font-family: 'Catamaran', sans-serif;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer li a {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+}
+
+footer li a:hover {
+  color: #6420F7;
+}
+
+footer .divider {
+  color: #333333;
+  font-weight: normal;
+}
+
+footer  .d-logo {
+  font-weight: 600;
+  font-size: 40px;
+  color: #6420F7;
+  margin-bottom: 0px;
+}
+
+footer .company-address {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+footer .section-title {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+footer .section-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 8px;
+}
+
+footer .copyright {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+footer .copyright a {
+  color: #6420F7;
+}
+
+/* react image gallery */
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  border-radius: 20px;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: 100vh;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  display: none;
+}
+
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+  height: 30px;
+  width: 30px;
+}
+
+/* inputs */
+
 input.error {
   border-color: red;
 }
-
 
 .input-feedback {
   color: red;
@@ -40,21 +286,33 @@ input.error {
   margin-top: -12px;
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+/* custom margins */
+
+.mt {
+  margin-top: 10px;
 }
 
-td,th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.mt-20 {
+  margin-top: 20px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.mt-40 {
+  margin-top: 40px;
 }
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* custom ant style */
 
 .ant-card-meta-title {
   font-family: 'Catamaran', sans-serif;
@@ -72,19 +330,6 @@ tr:nth-child(even) {
   margin: 0px 10px !important;
 }
 
-.background {
-  background-image: url(./components/views/LandingPage/Sections/header2.jpg);
-  width: 100%;
-  min-height: 400px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.ant-carousel .slick-slide img {
-  transition: all 0.2s ease-in  ;
-}
-
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
   display: none;
 }
@@ -97,3 +342,18 @@ tr:nth-child(even) {
   color: #6420F7 !important;
   border-bottom: none !important;
 }
+
+.ant-rate-star-half .ant-rate-star-first, .ant-rate-star-full .ant-rate-star-second {
+  color: #6420F7 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #6420F7 !important;
+  border-color: #6420F7 !important;
+}
+
+.ant-menu-item > a:hover {
+  color: #6420F7;
+}
+
+/* responsive mobile */

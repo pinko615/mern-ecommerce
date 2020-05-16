@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Descriptions, Rate } from 'antd'
-import { Row, Col, Divider } from 'antd';
-import { Progress } from 'antd';
+import { Button, Rate } from 'antd'
+import { Row, Col } from 'antd';
+import { useSelector } from 'react-redux';
 
 function ProductInfo(props) {
 
@@ -17,37 +17,61 @@ function ProductInfo(props) {
 
 
     return (
-        <div>
-            <p style={{ fontFamily:'Catamaran, sans serif', fontSize:'16px', fontWeight:'600', color:'#6420F7', marginTop:'10px'}}>
-                {Product.country}
-            </p>
-            <h1 style={{ marginTop:'20px'}}>Travel to {Product.title} 🛫</h1>
-            <p style={{ fontFamily:'Catamaran, sans serif', fontSize:'16px', marginTop:'10px'}}>
-                {Product.description}
-            </p>
-            <h3 style={{ fontSize:'20px', fontWeight:'600', marginTop:'20px'}}>What to do? ✨</h3>
-            <p style={{ fontFamily:'Catamaran, sans serif', fontSize:'16px', marginTop:'10px'}}>
-                {Product.todo}
-            </p>
-            <Row justify="start">
-                <Col span={4}> <Progress style={{color:'red'}} percent={50} showInfo={false} /></Col>
-                <Col span={4}>col-4</Col>
-                <Col span={4}>col-4</Col>
+        <div className="product-info">
+                <Row gutter={[32, 32]}>
+                <Col lg={16}>
+                    <h3>
+                        Description
+                    </h3>
+                    <p className="mt">
+                        {Product.description}
+                    </p>
+                    <h3 className="mt-20">
+                        What to do?
+                    </h3>
+                    <p className="mt">
+                        {Product.todo}
+                    </p>
+                    <h3 className="mt-20">
+                        More information
+                    </h3>
+                    <p className="mt">
+                        {Product.info}
+                    </p>
+                    <Button size="large"
+                            shape="round"
+                            onClick={addToCartHandler}
+                            className="btn mb-20">
+                        Book your trip
+                    </Button>
+                </Col>
+                <Col lg={8}>
+                    <div>
+                        <h3>
+                            ✨ Popularity:
+                        </h3>
+                        <Rate value={Product.popularity} allowHalf disabled />
+                    </div>
+                    <div>
+                        <h3 className="mt-20">
+                            🌃 Nightlife:
+                        </h3>
+                        <Rate value={Product.nightlife} allowHalf disabled />
+                    </div>
+                    <div>
+                        <h3 className="mt-20">
+                            🎡 Attractions:
+                        </h3>
+                        <Rate value={Product.attractions} allowHalf disabled />
+                    </div>
+                    <div>
+                        <h3 className="mt-20">
+                            🍔 Gastronomy:
+                        </h3>
+                        <Rate value={Product.gastronomy} allowHalf disabled />
+                    </div>
+                </Col>
             </Row>
-            <Descriptions title="Product Info">
-                <Descriptions.Item label="Price"> {Product.price}</Descriptions.Item>
-                <Descriptions.Item label="Sold"> {Product.sold}</Descriptions.Item>
-                <Descriptions.Item label="View"> {Product.views}</Descriptions.Item>
-            </Descriptions>
-            <Rate allowHalf defaultValue={4.5} />
-            <br />
-            <br />
-            <br />
-            <div style={{ display:'flex', justifyContent: 'left' }}>
-                <Button size="large" style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }} shape="round" onClick={addToCartHandler}>
-                    Book your trip
-                </Button>
-            </div>
         </div>
     )
 }

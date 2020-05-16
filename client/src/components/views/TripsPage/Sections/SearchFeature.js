@@ -19,6 +19,7 @@ function SearchFeature(props) {
                 value={SearchTerms}
                 onChange={onChangeSearch}
                 placeholder="Search by typing..."
+                size="large"
             />
         </div>
     )

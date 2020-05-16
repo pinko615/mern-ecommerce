@@ -22,11 +22,11 @@ const userSchema = mongoose.Schema({
         type: String,
         maxlength: 50
     },
-    role : {
+    role: {
         type: Number,
         default: 0 
     },
-    cart : {
+    cart: {
         type: Array,
         default: []
     },
@@ -35,10 +35,10 @@ const userSchema = mongoose.Schema({
         default: []
     },
     image: String,
-    token : {
+    token: {
         type: String,
     },
-    tokenExp :{
+    tokenExp: {
         type: Number
     }
 })

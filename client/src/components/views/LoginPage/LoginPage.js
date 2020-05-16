@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Typography, Col } from 'antd';
 import { useDispatch } from "react-redux";
 
 const { Title } = Typography;
@@ -79,27 +79,34 @@ function LoginPage(props) {
           handleReset,
         } = props;
         return (
-          <div className="app">
+          <div className="container">
+            <Col lg={12}>
+              asd
+            </Col>
+            <Col lg={12}>
+              <div className="app">
+                <div style={{ margin:'auto', padding:'auto' }}>
+                  <p className="d-logo">D.</p>
+                  <Title level={2}>Sign in to Discover.</Title>
+            
+                  <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
-            <Title level={2}>Log In</Title>
-            <form onSubmit={handleSubmit} style={{ width: '350px' }}>
-
-              <Form.Item required>
-                <Input
-                  id="email"
-                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="Enter your email"
-                  type="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.email && touched.email ? 'text-input error' : 'text-input'
-                  }
-                />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
+                  <Form.Item required>
+                  <Input
+                    id="email"
+                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                    placeholder="Enter your email"
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.email && touched.email ? 'text-input error' : 'text-input'
+                    }
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input-feedback">{errors.email}</div>
+                  )}
               </Form.Item>
 
               <Form.Item required>
@@ -125,18 +132,23 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
-                  forgot password
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} style={{ fontFamily:'Catamaran', fontWeight:'600' }} >Remember me</Checkbox>
+                <a className="login-form-forgot" href="/reset_user" style={{ fontFamily:'Catamaran', fontWeight:'600', float: 'right', color:'#6420F7' }}>
+                  Forgot password?
                   </a>
                 <div>
-                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
+                  <Button type="round" size="large" htmlType="submit" className="login-form-button" style={{ minWidth: '100%', backgroundColor:'#6420F7', color:'white' , border:'none' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                <div style={{ fontFamily:'Catamaran' }}>
+                Not a member? <a href="/register" style={{ fontWeight:'600', color:'#6420F7' }}>Sign up now!</a>
+                </div>
               </Form.Item>
             </form>
+            </div>
+            </div>
+          </Col>
           </div>
         );
       }}

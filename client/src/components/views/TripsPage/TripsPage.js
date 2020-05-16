@@ -66,11 +66,11 @@ function TripsPage() {
 
     const renderCards = Products.map((product, index) => {
 
-        return <Col lg={4} md={8} xs={12}>
+        return <Col lg={6} md={6} xs={12}>
             <Card
                 hoverable={true}
                 cover={<a href={`/product/${product._id}`} >
-                    <ImageSlider images={product.images} /></a>}
+                    <ImageSlider images={product.horizontal} /></a>}
             >
                 <Meta
                     title={product.title}
@@ -139,58 +139,58 @@ function TripsPage() {
 
     return (
         <div>
-        <div style={{ width:'85%', margin:'auto' }}>
-            <div style={{ textAlign:'center' }}>
-                <h2 style={{ fontFamily:'Catamaran', fontSize:'30px', marginBottom:'40px', marginTop:'40px' }}>
-                    Discover Now, Travel Tomorrow
+        <div className="container">
+            <div className="trips">
+                <h2>
+                    All Destinations
                 </h2>
             </div>
-
-            {/* filter */}
             <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                    <CheckBox
-                        list={continents}
-                        handleFilters={filters => handleFilters(filters, "continents")}
-                    />
-                </Col>
-                <Col lg={12} xs={24}>
-                    <RadioBox
-                        list={price}
-                        handleFilters={filters => handleFilters(filters, "price")}
-                    />
-                </Col>
-            </Row>
-
-
-
-            {/* search */}
-            <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem auto' }}>
-                
-                <SearchFeature
-                    refreshFunction={updateSearchTerms}
-                />
-
-            </div>
-
-            {Products.length === 0 ?
-                <div style={{ display:'flex', height:'300px', justifyContent:'center', alignItems:'center' }}>
-                    <h2>No post yet...</h2>
-                </div> :
-                <div>
-                    <Row gutter={[16,16]}>
-                        {Products.map((product, index) => {})}
-                        {renderCards}
+                <Col lg={6}>
+                    <Row>
+                        {/* search feature */}
+                        <div>
+                            <SearchFeature refreshFunction={updateSearchTerms} />
+                        </div>
                     </Row>
-                </div>
-            }
+                    <Row className="mt">
+                        {/* filter feature (checkbox) */}
+                        <CheckBox
+                            list={continents}
+                            handleFilters={filters => handleFilters(filters, "continents")}
+                        />
+                    </Row>
+                    <Row className="mt">
+                        {/* filter feature (radiobox) */}
+                        <RadioBox
+                            list={price}
+                            handleFilters={filters => handleFilters(filters, "price")}
+                        />
+                    </Row>
+                </Col>
+                <Col lg={18}>
+                    <div>
+                        <Row gutter={[24,24]}>
+                            {Products.map((product, index) => {})}
+                            {renderCards}
+                        </Row>
+                    </div>
                 <br /><br />
-
                 {PostSize >= Limit &&
-                    <div style={{ display:'flex', justifyContent:'center' }}>
-                        <Button onClick={onLoadMore} style={{ backgroundColor:'#6420F7', color:'white', border:'none', fontWeight:'600' }}>Load more</Button>
+                    <div className="center-button">
+                        <Button size="large" shape="round" onClick={onLoadMore} className="button">Load more</Button>
                     </div>
                 }
+                    </Col>
+
+                </Row>
+
+
+            
+
+            
+
+           
 
         </div>
         </div>
