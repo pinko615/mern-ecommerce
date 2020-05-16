@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Menu } from 'antd';
+import { Menu, Icon, Badge } from 'antd';
 import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
@@ -71,6 +71,13 @@ function RightMenu(props) {
             </Menu.Item>
           </MenuItemGroup>
         </SubMenu>
+        <Menu.Item key="cart">
+          <Badge count={1}>
+            <a href="/user/cart" style={{ color:'#6420F7'}}>
+              <Icon type="shopping-cart" style={{ fontSize:'30px', marginBottom:'4' }} />
+            </a>
+          </Badge>
+        </Menu.Item>
       </Menu>
     )
   }

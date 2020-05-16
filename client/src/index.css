@@ -39,6 +39,22 @@ body {
   margin-bottom: 0px;
 }
 
+table {
+  font-family: 'Catamaran', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 /* login */
 
 
