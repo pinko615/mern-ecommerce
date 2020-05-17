@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getCartItems, removeCartItem } from '../../../_actions/user_actions'
+import { getCartItems, removeCartItem, onSuccessBuy } from '../../../_actions/user_actions'
 import UserCardBlock from './Sections/UserCardBlock'
 import { Result, Empty } from 'antd'
-import Axios from 'axios'
+import Paypal from '../../utils/Paypal'
 
 function CartPage(props) {
 
@@ -59,41 +59,72 @@ function CartPage(props) {
             })
     }
 
+    const transactionSuccess = (data) => {
+        dispatch(onSuccessBuy({
+            cartDetail: props.user.cartDetail,
+            paymentData: data
+        }))
+            .then(response => {
+                if (response.payload.success) {
+                    setShowSuccess(true)
+                    setShowTotal(false)
+                }
+            })
+    }
+
+    const transactionError = () => {
+        console.log('Paypal error')
+    }
+
+    const transactionCanceled = () => {
+        console.log('Transaction canceled')
+    }
+
     return (
         <div className="container">
-            <h1 className="mt-40">My Cart</h1>
+            <h1 className="mt-40 mb-40">My Cart </h1>
             <div>
                 <UserCardBlock
                     products={props.user.cartDetail}
                     removeItem={removeFromCart}
                 />
+
                 {ShowTotal ?
-                    <div className="mt-40">
-                        <h2>Total amount: ${Total} </h2>
+                    <div>
+                        <h2 className="total-price">Total <span>${Total}</span> </h2>
                     </div>
                     :
-                    ShowSuccess ? 
+                    ShowSuccess ?
                         <Result
                             status="success"
                             title="Successfully Purchased Items"
-                    /> :
-                    <div style={{
-                            width:'100%', display:'flex', flexDirection:'column',
-                            justifyContent:'center'
-                    }}>
-                        <br />
-                        <Empty description={false}/>
-                        <p>No items in the Cart...</p>
+                        /> :
+                        <div style={{
+                            width: '100%', display: 'flex', flexDirection: 'column',
+                            justifyContent: 'center'
+                        }}>
+                            <br />
+                            
+                            <Empty description={false} />
+                            <h3 style={{textAlign:'center'}}>Your cart is empty</h3>
+                            <p style={{textAlign:'center'}}>Add trips to your cart</p>
 
-                </div>
-
+                        </div>
                 }
-
-
-
-
-
             </div>
+
+            {/* PayPal button */}
+            {ShowTotal &&
+
+                <Paypal
+                    toPay={Total}
+                    onSuccess={transactionSuccess}
+                    transactionError={transactionError}
+                    transactionCanceled={transactionCanceled}
+                />
+
+            }
+
         </div>
     )
 }

@@ -39,6 +39,13 @@ body {
   margin-bottom: 0px;
 }
 
+.button {
+  background-color: #6420F7;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
 table {
   font-family: 'Catamaran', sans-serif;
   border-collapse: collapse;
@@ -51,9 +58,6 @@ td,th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 /* login */
 
@@ -67,7 +71,7 @@ tr:nth-child(even) {
 /* main slide */
 
 .background {
-  background-image: url(./components/views/LandingPage/Sections/header2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, .10) 0%, rgba(0,0,0,.10) 100%), url(./components/views/LandingPage/Sections/header2.jpg);
   width: 100%;
   min-height: 400px;
   background-position: center;
@@ -117,7 +121,14 @@ tr:nth-child(even) {
   font-size: 30px;
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 40px;
+}
+
+.home h3 {
+  color: #6420F7;
+  font-size: 30px;
+  margin-top:60px;
+  font-weight: 600;
+  line-height: 40px;
 }
 
 .appdesign {
@@ -193,13 +204,51 @@ tr:nth-child(even) {
   border: 1px solid #6420F7;
 }
 
+.btn span {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* login */
 .app {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
+}
+
+/* cart */
+
+.cart-img {
+  width: 90%;
+}
+
+.cart-title {
+  margin-top: 14px;
+}
+
+.cart-title span {
+  color: #6420F7;
+}
+
+.cart-price {
+  font-size: 16px;
+}
+
+.cart-price span {
+  font-family: 'Open Sans', sans-serif;
+  color: #6420F7;
+  font-weight: 600;
+}
+
+.total-price span {
+  font-family: 'Open Sans', sans-serif;
+  color: #6420F7;
+  font-weight: 600;
+}
+
+.paypal-button-text {
+  display: none !important;
 }
 
 /* footer */
@@ -217,10 +266,12 @@ footer li {
 footer li a {
   color: rgba(0, 0, 0, 0.65);
   font-size: 16px;
+  line-height: 28px;
 }
 
 footer li a:hover {
   color: #6420F7;
+  font-weight: 600;
 }
 
 footer .divider {
@@ -244,6 +295,7 @@ footer .company-address {
 
 footer .section-title {
   font-family: 'Catamaran', sans-serif;
+  color: #6420F7;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -270,6 +322,15 @@ footer .copyright {
 footer .copyright a {
   color: #6420F7;
 }
+
+footer a .footer-icon {
+  font-size: 26px;
+  color: #6420F7;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+
 
 /* react image gallery */
 
@@ -372,4 +433,80 @@ input.error {
   color: #6420F7;
 }
 
+.paypal-button-text {
+  display: none;
+}
+
 /* responsive mobile */
+
+@media (min-width: 576px) {
+  .ant-col-sm-16 {
+    width: 100% !important;
+  }
+
+  .ant-col-sm-offset-8 {
+   margin: 0 !important;
+}
+
+}
+
+@media (max-width: 767px) {
+
+  .container {
+    width: 85%;
+  }
+
+  .sub-container p {
+    max-width: 100%;
+  }
+
+  .login-image {
+    display:none !important;
+  }
+
+  .sub-container h1 {
+    line-height: 44px;
+  }
+
+  .background {
+    background: linear-gradient(rgba(0, 0, 0, .15) 0%, rgba(0,0,0,.15) 100%), url(./components/views/LandingPage/Sections/header2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .home h3 {
+    margin-top:0px;
+  }
+
+  .mobile-img {
+    margin-top: 40px;
+  }
+
+  footer .container {
+    width: 85%;
+  }
+
+  footer .d-logo {
+    text-align: center;
+  }
+
+  .company-address {
+    text-align: center;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  footer .hide-mobile {
+    display: none;
+  }
+
+  footer a .footer-icon {
+    text-align: center;
+  }
+
+  
+
+}

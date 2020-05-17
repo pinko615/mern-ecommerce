@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Icon, Col } from 'antd'
 
 function UserCardBlock(props) {
 
@@ -11,37 +12,34 @@ function UserCardBlock(props) {
 
     const renderItems = () => (
         props.products && props.products.map(product => (
-            <tr key={product._id}>
-                <td>
-                    <img style={{ width:'70px' }} alt="product" src={renderCartImage(product.images)} />
-                </td>
-                <td>{product.quantity} ea</td>
-                <td>${product.price}</td>
-                <td><button
+            <div key={product._id}>
+                <Col lg={12}>
+                <div>
+                <img className="cart-img" alt="product" src={renderCartImage(product.images)} />
+                </div>
+                <h2 className="cart-title"> Trip to <span>{product.title}</span>
+                </h2>
+                <p className="cart-price">Price per person: <span>${product.price}</span></p>
+                <Button size="large" shape="round" style={{color:'#6420F7', marginBottom:'30px'}}
                 onClick={() => props.removeItem(product._id)}
-                >Remove</button></td>
+                ><Icon type="delete" />Remove</Button>
+                </Col>
+                
+                    
+                    
+                
+                
 
-            </tr>
+            </div>
         ))
     )
 
 
     return (
         <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Image</th>
-                        <th>Product Quantity</th>
-                        <th>Product Price</th>
-                        <th>Remove from Cart</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderItems()}
-                </tbody>
-            </table>
-        </div>
+       {renderItems()}
+       </div>
+                
     )
 }
 

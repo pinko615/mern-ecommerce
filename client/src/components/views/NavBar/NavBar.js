@@ -22,7 +22,7 @@ function NavBar() {
           <a href="/"><h1 style={{ fontWeight:'600' }}>Discover.</h1></a>
       </div>
       <div className="menu__container">
-        <div className="menu_rigth">
+        <div className="menu_right">
           <RightMenu mode="horizontal" />
         </div>
         <Button
@@ -33,14 +33,13 @@ function NavBar() {
           <Icon type="align-right" />
         </Button>
         <Drawer
-          title="Basic Drawer"
+          title="Discover the world"
           placement="right"
           className="menu_drawer"
           closable={false}
           onClose={onClose}
           visible={visible}
         >
-          <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
         </Drawer>
       </div>

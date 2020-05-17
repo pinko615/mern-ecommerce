@@ -14,7 +14,7 @@ function TripsPage() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(6)
+    const [Limit, setLimit] = useState(12)
     const [PostSize, setPostSize] = useState()
     const [SearchTerms, setSearchTerms] = useState("")
 

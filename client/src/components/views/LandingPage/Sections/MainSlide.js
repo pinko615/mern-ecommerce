@@ -12,7 +12,7 @@ function MainSlide() {
                 Discover can be your best resource for finding great travel deals and cheap flights to your favorite destinations around the world.
                 If you're looking for affordable airfare or vacation packages you cand find it!
               </p>
-              <Button size="large" shape="round" className="button">Book your next trip</Button>
+              <Button href="/trips" size="large" shape="round" className="button">Book your next trip</Button>
             </div>
             
           </div>

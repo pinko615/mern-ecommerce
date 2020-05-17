@@ -5,6 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography, Col } from 'antd';
 import { useDispatch } from "react-redux";
+import img from './img.jpg'
 
 const { Title } = Typography;
 
@@ -81,7 +82,7 @@ function LoginPage(props) {
         return (
           <div className="container">
             <Col lg={12}>
-              asd
+              <img className="login-image" src={img} style={{ width:'85%', display:'block', marginLeft:'auto', marginRight:'auto', marginBottom:'30px', borderRadius:'20px'}}></img>
             </Col>
             <Col lg={12}>
               <div className="app">

@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-import { Icon, Card, Col, Row, Button } from 'antd'
+import { Card, Col, Row } from 'antd'
 import ImageSlider from '../../utils/ImageSlider'
-import RadioBox from './Sections/RadioBox'
-import CheckBox from './Sections/CheckBox'
-import { continents, price } from './Sections/Datas'
-import SearchFeature from './Sections/SearchFeature'
+import { price } from './Sections/Datas'
 import MainSlide from './Sections/MainSlide'
 import Why from './Sections/Why'
 const { Meta } = Card
@@ -15,7 +12,7 @@ function LandingPage() {
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(6)
+    const [Limit, setLimit] = useState(8)
     const [PostSize, setPostSize] = useState()
     const [SearchTerms, setSearchTerms] = useState("")
 
@@ -143,7 +140,7 @@ function LandingPage() {
             <div className="container">
                 <MainSlide />
                 <div className="home">
-                    <h2>
+                    <h2 style={{marginTop:'50px'}}>
                     Discover Now, Travel Tomorrow
                     </h2>
                 </div>

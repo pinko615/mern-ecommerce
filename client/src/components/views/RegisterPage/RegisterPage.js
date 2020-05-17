@@ -4,12 +4,16 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
+import img from '../LoginPage/img.jpg'
 
 import {
   Form,
   Input,
   Button,
+  Col,
+  Typography
 } from 'antd';
+const { Title } = Typography;
 
 const formItemLayout = {
   labelCol: {
@@ -97,11 +101,20 @@ function RegisterPage(props) {
           handleReset,
         } = props;
         return (
-          <div className="app">
-            <h2>Sign up</h2>
-            <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
+          <div className="container">
+            <Col lg={12}>
+            <img className="login-image" src={img} style={{ width:'85%', display:'block', marginLeft:'auto', marginRight:'auto', marginBottom:'30px', borderRadius:'20px'}}></img>
+            </Col>
 
-              <Form.Item required label="Name">
+            <Col lg={12}>
+              <div className="app">
+                <div style={{ margin:'auto', padding:'auto' }}>
+                  <p className="d-logo">D.</p>
+                  <Title level={2}>Create your account.</Title>
+
+                  <Form style={{ width: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
+
+              <Form.Item required>
                 <Input
                   id="name"
                   placeholder="Enter your name"
@@ -118,7 +131,7 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Last Name">
+              <Form.Item required>
                 <Input
                   id="lastName"
                   placeholder="Enter your Last Name"
@@ -135,7 +148,7 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Email" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
+              <Form.Item required hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
                 <Input
                   id="email"
                   placeholder="Enter your Email"
@@ -152,7 +165,7 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
+              <Form.Item required hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                 <Input
                   id="password"
                   placeholder="Enter your password"
@@ -169,10 +182,10 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Confirm" hasFeedback>
+              <Form.Item required hasFeedback>
                 <Input
                   id="confirmPassword"
-                  placeholder="Enter your confirmPassword"
+                  placeholder="Confirm your Password"
                   type="password"
                   value={values.confirmPassword}
                   onChange={handleChange}
@@ -187,11 +200,18 @@ function RegisterPage(props) {
               </Form.Item>
 
               <Form.Item {...tailFormItemLayout}>
-                <Button onClick={handleSubmit} type="primary" disabled={isSubmitting}>
-                  Submit
+                <Button onClick={handleSubmit} type="round" size="large" className="login-form-button" style={{ minWidth: '100%', backgroundColor:'#6420F7', color:'white' , border:'none' }} disabled={isSubmitting}>
+                  Register
                 </Button>
+                <div style={{ fontFamily:'Catamaran' }}>
+                Already a member? <a href="/login" style={{ fontWeight:'600', color:'#6420F7' }}>Sign in now!</a>
+                </div>
               </Form.Item>
             </Form>
+                </div>
+              </div>
+            </Col>
+            
           </div>
         );
       }}

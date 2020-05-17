@@ -3,8 +3,6 @@
 
 .menu {
   overflow: auto;
-  background-color: white;
-  width: 100%;
   font-family: 'Catamaran', sans-serif !important;
 }
 
@@ -30,7 +28,7 @@ h1 {
 
 .menu__container .ant-menu-item {
   display: inline-block;
-  padding: 0px 5px;
+  padding: 0px 0px;
   font-size: 16px;
   font-weight: 600;
 }
@@ -50,26 +48,68 @@ h1 {
   border-bottom: none;
 }
 
+.ant-menu-item {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600;
+  font-size: 16px !important;
+}
+
+.ant-menu-item > a:hover {
+  color: #6420F7;
+}
+
+.ant-menu-item-selected > a, .ant-menu-item-selected > a:hover {
+  color: #6420F7;
+}
+
+.ant-menu-item-selected {
+  color: #6420F7;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: white;
+}
+
 .ant-menu-horizontal > .ant-menu-item > a:hover {
   color: #6420F7;
 }
 
-.menu__container .menu_left {
-  float: left;
+
+.ant-menu-item, .ant-menu-submenu-title {
+  -webkit-transition: none;
+  transition: none;
 }
 
-.menu__container .menu_rigth {
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+  color: #6420F7;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #6420F7;
+  border-bottom: none !important;
+}
+
+.menu__container .ant-menu-submenu-title span:hover {
+    color: #6420F7;
+}
+
+.menu__container .menu_right {
   float: right;
   margin-top: 12px;
+}
+
+.ant-badge-count {
+  background: #6420F7;
 }
 
 .menu__mobile-button {
   float: right;
   height: 32px;
   padding: 6px;
-  margin-top: 8px;
+  margin-top: 15px;
   display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+  background: #6420F7;
+  border: 1px solid #6420F7;
 }
 
 .menu_drawer .ant-drawer-body {
@@ -82,12 +122,17 @@ h1 {
 }
 
 @media (max-width: 767px) {
+
   .menu__mobile-button {
     display: inline-block !important;
   }
 
+  .menu-w {
+    width: 85%;
+  }
+
   .menu_left,
-  .menu_rigth {
+  .menu_right {
     display: none;
   }
 
